@@ -1,0 +1,9 @@
+[target.thumbv7m-none-eabi]
+runner = 'arm-none-eabi-gdb'
+rustflags = [
+  "-C", "link-arg=-Tlink.x",
+  #-T连接脚本名字,这里名字必须为link.x,因为使用的cortex_m_rt库会自动生成link.x文件,在这个link.x文件中 INCLUDE memory.x, 所以外部crate只需要提供memory.x, 如果外部文件提供了link.x或者改变了link参数则会覆盖cortex_m_rt中的link.x文件
+]
+
+[build]
+target = "thumbv7m-none-eabi"

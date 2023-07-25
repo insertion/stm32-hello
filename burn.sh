@@ -1,0 +1,1 @@
+openocd -f interface/stlink.cfg -f target/stm32f1x.cfg -c "program target/thumbv7m-none-eabi/debug/stm32-hello verify reset exit"
